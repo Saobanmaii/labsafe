@@ -53,6 +53,48 @@ pend_key = f"pending_{cam}"
 pending = st.session_state.setdefault(pend_key, [])
 cz = Z.setdefault(cam, {})
 
+
+@st.cache_resource(show_spinner="Đang nạp mô hình phân đoạn SegFormer-B5 (lần đầu ~30 giây)...")
+def _segmenter():
+    from core.segment import Segmenter
+    return Segmenter()
+
+
+# ---------------------------------------------------------------- tự đề xuất vùng
+with st.expander("🪄 Tự đề xuất vùng bằng phân đoạn ngữ nghĩa", expanded=not cz):
+    st.markdown(
+        "Mô hình **SegFormer-B5** (học trên ADE20K, 150 loại cảnh trong nhà) gán nhãn **từng điểm ảnh** trên ảnh nền: "
+        "phần **sàn** → đề xuất lối đi, phần **bàn** → đề xuất mặt bàn; mô hình bình nhóm tự huấn luyện → vị trí bình. "
+        "Ảnh nền phải là **ảnh phòng sạch** (không có vật cản), nếu không vùng sẽ thủng đúng chỗ có vật.")
+    st.caption("Đánh giá trên 6 góc camera: vị trí bình dùng được ngay (C3 κ 0,87); mặt bàn gần được (C2 0,55 so với 0,58 "
+               "khi vẽ tay; bàn thí nghiệm hay bị nhầm thành tủ); lối đi **cần người sửa** vì sàn chưa chắc là lối đi "
+               "(C1 0,34 so với 0,71). Hãy xem lại và chỉnh bằng công cụ vẽ bên dưới.")
+    prop_key = f"proposal_{cam}"
+    if st.button("Đề xuất vùng cho camera này", type="primary"):
+        from core.segment import propose_zones
+        with st.spinner("Đang phân đoạn ảnh..."):
+            st.session_state[prop_key] = propose_zones(load_image(ref), _segmenter(), ui.detector(c))
+    prop = st.session_state.get(prop_key)
+    if prop is not None:
+        img0 = load_image(ref)
+        h0, w0 = img0.shape[:2]
+        small0 = cv2.resize(img0, (900, int(h0 * 900 / w0)), interpolation=cv2.INTER_AREA)
+        a, b = st.columns(2)
+        a.image(to_rgb(draw_zones_only(small0, cz, c)), caption="Vùng hiện tại", width="stretch")
+        b.image(to_rgb(draw_zones_only(small0, prop, c)), caption="Đề xuất tự động", width="stretch")
+        found = [z for z in ZT if prop.get(z)]
+        missing = [ZT[z]["name"] for z in ZT if not prop.get(z)]
+        if missing:
+            st.info("Không tìm thấy: " + ", ".join(missing) + ". Vẽ tay các vùng này bên dưới.")
+        use = st.multiselect("Áp dụng cho loại vùng", found, default=found, format_func=lambda z: ZT[z]["name"])
+        if st.button("Áp dụng đề xuất (thay vùng cùng loại)", disabled=not use):
+            for z in use:
+                cz[z] = prop[z]
+            save_zones(Z)
+            del st.session_state[prop_key]
+            st.toast("Đã áp dụng. Hãy kiểm tra và sửa lại nếu cần.", icon="🪄")
+            st.rerun()
+
 tool, canvas = st.columns([1, 3])
 with tool:
     zt = st.radio("Loại vùng đang vẽ", list(ZT), format_func=lambda z: ZT[z]["name"])

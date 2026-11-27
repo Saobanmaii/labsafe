@@ -19,6 +19,9 @@ streamlit-image-coordinates
 # Gemini (tuỳ chọn)
 google-genai
 
+# Phân đoạn ngữ nghĩa: tự đề xuất vùng (SegFormer)
+transformers
+
 # Huấn luyện LabSafe-6 (app/train)
 ijson
 

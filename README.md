@@ -72,6 +72,10 @@ paper/          bài báo (LaTeX)
 | Gemini 3.5 Flash | 0,44 | 0,88 | 0,78 | 0,97 |
 | Kết hợp (luật C1, C3 + Gemini C2, C4) | 0,74 | 0,88 | 0,90 | 0,97 |
 
+**Tự đề xuất vùng bằng phân đoạn ngữ nghĩa** (trang «Vùng camera», `app/core/segment.py`, đánh giá: `python app/eval_auto_zones.py`):
+SegFormer-B5 (ADE20K) tìm sàn và mặt bàn trên ảnh phòng sạch, mô hình bình tìm vị trí bình. Khi chỉ dùng vùng tự động:
+C3 = 0,87 và C2 = 0,55 (gần vẽ tay), nhưng C1 = 0,34 (vẽ tay 0,71) vì sàn chưa chắc là lối đi → dùng làm trợ lý, người sửa lại.
+
 **Thử nghiệm LabSafe-6** (`app/train/`, `models/labsafe6_v2.pt`): YOLO11n 6 lớp (bình, áo khoác, mũ, ví, đồ uống, đồ ăn)
 train trên ~4.700 ảnh công khai (Open Images, LVIS, Fire-ART), mAP@0,5 = 0,454 trên tập kiểm định. Trên 62 ảnh phòng lab
 **không cải thiện κ** vì ảnh công khai khác bối cảnh (áo đang mặc, chụp cận) → bước tiếp theo: ảnh tự chụp đồ cá nhân trên bàn

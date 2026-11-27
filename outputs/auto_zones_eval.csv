@@ -1,0 +1,25 @@
+﻿Góc,Ảnh nền,IoU aisle,IoU bench,IoU extinguisher
+v1,v1_01.jpg,0.7,0.0,0.46
+v2a,v2a_01.jpg,0.51,0.69,0.3
+v2b,v2b_01.jpg,0.73,0.87,0.29
+v2c,v2c_01.jpg,0.77,0.67,0.3
+v3a,v3a_01.jpg,0.9,0.0,0.26
+v3b,v3b_01.jpg,0.75,0.0,0.26
+
+Vùng,Tiêu chí,n,Khớp,κ,F1 (vi phạm),TP,FP,FN,TN
+Vẽ tay (có vùng riêng ảnh lệch khung),C1,62,0.871,0.741,0.882,30,6,2,24
+Vẽ tay (có vùng riêng ảnh lệch khung),C2,62,0.903,0.578,0.625,5,0,6,51
+Vẽ tay (có vùng riêng ảnh lệch khung),C3,62,0.952,0.903,0.954,31,2,1,28
+Vẽ tay (có vùng riêng ảnh lệch khung),C4,62,0.952,0.9,0.941,24,1,2,35
+"Vẽ tay, chỉ theo góc camera",C1,62,0.855,0.708,0.87,30,7,2,23
+"Vẽ tay, chỉ theo góc camera",C2,62,0.903,0.578,0.625,5,0,6,51
+"Vẽ tay, chỉ theo góc camera",C3,62,0.935,0.871,0.939,31,3,1,27
+"Vẽ tay, chỉ theo góc camera",C4,62,0.952,0.9,0.941,24,1,2,35
+"Tự động, không loại gầm bàn",C1,62,0.677,0.343,0.75,30,18,2,12
+"Tự động, không loại gầm bàn",C2,35,0.886,0.545,0.6,3,0,4,28
+"Tự động, không loại gầm bàn",C3,62,0.935,0.871,0.939,31,3,1,27
+"Tự động, không loại gầm bàn",C4,62,0.952,0.9,0.941,24,1,2,35
+"Tự động (SegFormer-B5 + mô hình bình, loại gầm bàn)",C1,62,0.677,0.343,0.75,30,18,2,12
+"Tự động (SegFormer-B5 + mô hình bình, loại gầm bàn)",C2,35,0.886,0.545,0.6,3,0,4,28
+"Tự động (SegFormer-B5 + mô hình bình, loại gầm bàn)",C3,62,0.935,0.871,0.939,31,3,1,27
+"Tự động (SegFormer-B5 + mô hình bình, loại gầm bàn)",C4,62,0.952,0.9,0.941,24,1,2,35
