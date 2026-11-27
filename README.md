@@ -71,3 +71,8 @@ paper/          bài báo (LaTeX)
 | YOLO + luật (sản phẩm) | 0,74 | 0,58 | 0,90 | 0,90 |
 | Gemini 3.5 Flash | 0,44 | 0,88 | 0,78 | 0,97 |
 | Kết hợp (luật C1, C3 + Gemini C2, C4) | 0,74 | 0,88 | 0,90 | 0,97 |
+
+**Thử nghiệm LabSafe-6** (`app/train/`, `models/labsafe6_v2.pt`): YOLO11n 6 lớp (bình, áo khoác, mũ, ví, đồ uống, đồ ăn)
+train trên ~4.700 ảnh công khai (Open Images, LVIS, Fire-ART), mAP@0,5 = 0,454 trên tập kiểm định. Trên 62 ảnh phòng lab
+**không cải thiện κ** vì ảnh công khai khác bối cảnh (áo đang mặc, chụp cận) → bước tiếp theo: ảnh tự chụp đồ cá nhân trên bàn
+(`HUONG_DAN_THU_THAP_DU_LIEU.docx`). Chi tiết: `outputs/train_labsafe6_v2.json`, `outputs/compare_labsafe6.csv`.
