@@ -1,0 +1,35 @@
+HƯỚNG DẪN VẼ VÙNG (khoảng 15-20 phút)
+
+Mục đích: khoanh 3 vùng trên ảnh phòng thí nghiệm để máy biết đâu là lối đi, mặt bàn, bình chữa cháy.
+
+CHUẨN BỊ
+1. Giải nén file zip.
+2. Mở file "zone_tool.html" bằng Chrome (nhấp đúp, hoặc kéo thả vào Chrome).
+3. Bấm nút "1. Mở ảnh (chọn nhiều)" -> vào thư mục "images" -> Ctrl+A chọn hết -> Open.
+
+CÁCH VẼ MỘT VÙNG
+- Chọn loại vùng ở cột trái:
+    Xanh lá  = Lối đi (phần SÀN trống để đi lại, không gồm gầm bàn)
+    Xanh dương = Mặt bàn thí nghiệm (mặt trên của bàn)
+    Đỏ       = Vị trí bình chữa cháy (vẽ SÁT quanh thân bình)
+- Click lần lượt các góc của vùng trên ảnh (4-8 điểm là đủ).
+- Bấm phím Enter để khép vùng. Bấm Backspace nếu click sai.
+- Một loại có thể vẽ nhiều vùng (ví dụ 2 cái bàn -> vẽ 2 vùng xanh dương).
+
+BƯỚC 1 — Vẽ 1 lần cho mỗi góc (6 ảnh)
+Bấm vào từng ảnh dưới đây ở danh sách bên trái, vẽ đủ 3 loại vùng:
+    v1_01   v2a_01   v2b_01   v2c_01   v3a_01   v3b_01
+(Vùng vẽ trên ảnh _01 sẽ tự áp dụng cho các ảnh khác cùng góc.)
+
+BƯỚC 2 — Vẽ riêng cho ảnh bị lệch khung (8 ảnh)
+Với từng ảnh dưới đây: bấm vào ảnh -> TICK ô "Vẽ riêng cho ảnh này" -> vẽ lại đủ 3 loại vùng:
+    v2a_03   v2a_07   v2a_08   v2b_07   v3b_02   v3b_03   v3b_04   v3b_05
+Nếu bình chữa cháy bị che khuất trong ảnh đó: vẽ vùng đỏ ở chỗ bình ĐÁNG LẼ nằm (ước lượng theo các ảnh khác).
+
+KIỂM TRA
+- Bấm qua vài ảnh khác (ví dụ v1_05, v2c_09): vùng phải nằm đúng chỗ. Nếu ảnh nào lệch nhiều -> làm như Bước 2 cho ảnh đó.
+- Cột trái: ảnh đã có vùng hiện dấu ✓.
+
+XONG
+Bấm nút xanh "Tải zones.json" -> gửi lại file zones.json này. Không cần gửi lại ảnh.
+(Lỡ tắt trình duyệt giữa chừng: mở lại, chọn ảnh, bấm "Nạp zones.json cũ" để vẽ tiếp.)

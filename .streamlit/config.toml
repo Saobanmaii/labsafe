@@ -1,0 +1,27 @@
+[server]
+maxUploadSize = 1000
+
+[client]
+toolbarMode = "minimal"
+
+[theme]
+base = "light"
+primaryColor = "#C62828"
+backgroundColor = "#F3F4F6"
+secondaryBackgroundColor = "#F7F8FA"
+textColor = "#1F2430"
+font = "Be Vietnam Pro:https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap, sans-serif"
+headingFont = "Be Vietnam Pro:https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap, sans-serif"
+baseRadius = "10px"
+buttonRadius = "8px"
+borderColor = "#E5E7EB"
+showWidgetBorder = true
+showSidebarBorder = false
+chartCategoricalColors = ["#C0171E", "#F28B8B", "#7A0E12", "#E8A33D", "#5B8DEF", "#2F9E6E", "#8E6CC9"]
+
+[theme.sidebar]
+primaryColor = "#FFFFFF"
+backgroundColor = "#C0171E"
+secondaryBackgroundColor = "#A51219"
+textColor = "#FFFFFF"
+borderColor = "#D94A50"

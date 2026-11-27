@@ -1,0 +1,63 @@
+﻿image,view,original,intended_scenario
+v1_01.jpg,v1,Góc 1\Gọn gàng bẫy.jpg,s01
+v1_02.jpg,v1,Góc 1\s1 - phòng gọn gàng.jpg,s01
+v1_03.jpg,v1,Góc 1\s2 - Balo + ghế trên lối đi.jpg,s02
+v1_04.jpg,v1,Góc 1\s3 -  3–4 đồ cá nhân trên bàn.jpg,s03
+v1_05.jpg,v1,Góc 1\s3.2 - đồ cá nhân trên bàn.jpg,s03
+v1_06.jpg,v1,Góc 1\s5 - 1 cốc + 1 chai nước trên bàn.jpg,s05
+v1_07.jpg,v1,Góc 1\s5.2 - 1 cốc + 1 chai nước trên bàn.jpg,s05
+v1_08.jpg,v1,"Góc 1\s6 - Lối đi có thùng_ bàn có laptop, balo, điện thoại.jpg",s06
+v1_09.jpg,v1,Góc 1\s7 - Áo khoác hoặc túi treo che bình_ lon nước + bánh trên bàn.jpg,s07
+v1_10.jpg,v1,Góc 1\s8 - Ghế trên lối đi_ balo che bình_ cốc trên bàn.jpg,s08
+v1_11.jpg,v1,"Góc 1\s8.2 - Ghế che bình, đồ trên lối đi, cốc trên bàn.jpg",s08
+v1_12.jpg,v1,Góc 1\s9 - Bừa toàn bộ.jpg,s09
+v2a_01.jpg,v2a,Góc 2\cao\s1 - Phòng gọn gàng.jpg,s01
+v2a_02.jpg,v2a,Góc 2\cao\s1.2 - Gòn gàng bẫy.jpg,s01
+v2a_03.jpg,v2a,Góc 2\cao\s2 - Balo + Ghế trên lối đi.jpg,s02
+v2a_04.jpg,v2a,Góc 2\cao\s3 - Đồ dùng cá nhận trên bàn.jpg,s03
+v2a_05.jpg,v2a,Góc 2\cao\s4 - Cặp che bình cứu hỏa.jpg,s04
+v2a_06.jpg,v2a,Góc 2\cao\s5 - Cốc + đồ ăn trên bàn.jpg,s05
+v2a_07.jpg,v2a,"Góc 2\cao\s6 - Lối đi có ghế, bàn có laptop, điện thoại.jpg",s06
+v2a_08.jpg,v2a,"Góc 2\cao\s7 - Áo khoác che bình cứu hỏa, nước và bánh trên bàn.jpg",s07
+v2a_09.jpg,v2a,"Góc 2\cao\s8 - Ghế trên lối đi, balo che bình, nước trên bàn.jpg",s08
+v2a_10.jpg,v2a,Góc 2\cao\s9 - Bừa_.jpg,s09
+v2b_01.jpg,v2b,Góc 2\trung\s1 - Gọn.jpg,s01
+v2b_02.jpg,v2b,Góc 2\trung\s1.2 - Gọn gàng có bẫy.jpg,s01
+v2b_03.jpg,v2b,Góc 2\trung\s2 - Balo + ghế trên lối đi.jpg,s02
+v2b_04.jpg,v2b,Góc 2\trung\s2 - Ghế trên lối đi.jpg,s02
+v2b_05.jpg,v2b,Góc 2\trung\s3 - Đồ cá nhân trên bàn.jpg,s03
+v2b_06.jpg,v2b,Góc 2\trung\s4 - Cặp chán bình chữa cháy.jpg,s04
+v2b_07.jpg,v2b,Góc 2\trung\s5 - Đồ ăn trên bàn.jpg,s05
+v2b_08.jpg,v2b,"Góc 2\trung\s6 - Lối đi có ghế, bàn có lap.jpg",s06
+v2b_09.jpg,v2b,"Góc 2\trung\s7 - Áo khoác che bình cưu shoar, đồ ăn trên bàn.jpg",s07
+v2b_10.jpg,v2b,"Góc 2\trung\s8 - balo che bình, cốc trên bàn.jpg",s08
+v2b_11.png,v2b,Góc 2\trung\s8.2 - Ghế trên lối đi_ balo che bình_ cốc trên bàn.png,s08
+v2b_12.jpg,v2b,Góc 2\trung\s9 bừa.jpg,s09
+v2c_01.jpg,v2c,Góc 2\dưới\s1 - Phòng gọn.jpg,s01
+v2c_02.jpg,v2c,Góc 2\dưới\s1.2 - Bãy gọn gàng.jpg,s01
+v2c_03.jpg,v2c,Góc 2\dưới\s1.2 - Phòng gọn bẫy.jpg,s01
+v2c_04.jpg,v2c,Góc 2\dưới\s2 - Balo ghế trên lối đi.jpg,s02
+v2c_05.jpg,v2c,"Góc 2\dưới\s2.2 Balo, ghế trên lối đi.jpg",s02
+v2c_06.jpg,v2c,"Góc 2\dưới\s3 - 3–4 đồ cá nhân trên bàn (điện thoại, ví, sách, áo khoác).jpg",s03
+v2c_07.jpg,v2c,Góc 2\dưới\s4 - Balo chắn bình chữa cháy(1).jpg,s04
+v2c_08.jpg,v2c,Góc 2\dưới\s4 - Balo chắn bình chữa cháy.jpg,s04
+v2c_09.jpg,v2c,"Góc 2\dưới\s4 - chai nước, đồ ăn trên bàn.jpg",s04
+v2c_10.jpg,v2c,"Góc 2\dưới\s6 - Lối đi có thùng_ bàn có laptop, balo, điện thoại.jpg",s06
+v2c_11.jpg,v2c,Góc 2\dưới\s7 - Áo khoác hoặc túi treo che bình_ lon nước + bánh trên bàn.jpg,s07
+v2c_12.jpg,v2c,Góc 2\dưới\s8 - Ghế trên lối đi_ balo che bình_ cốc trên bàn.jpg,s08
+v2c_13.jpg,v2c,Góc 2\dưới\s9 - Bừa toàn bộ.jpg,s09
+v3a_01.jpg,v3a,Góc 3\Cao\s1 - Phòng gọn.jpg,s01
+v3a_02.jpg,v3a,Góc 3\Cao\s1.2 - Phòng gọn bãy.jpg,s01
+v3a_03.jpg,v3a,Góc 3\Cao\s2 - Ghế trên lối đi.jpg,s02
+v3a_04.jpg,v3a,Góc 3\Cao\s3 - Đồ cá nhân trên bàn.jpg,s03
+v3a_05.jpg,v3a,Góc 3\Cao\s4 - Ghế chắn bình chữa cháy.jpg,s04
+v3a_06.jpg,v3a,Góc 3\Cao\s5 - cốc + chai trên bàn.jpg,s05
+v3a_07.jpg,v3a,"Góc 3\Cao\s6 - Lối đi có ghế, bàn có laptop, đồ dùng.jpg",s06
+v3a_08.jpg,v3a,"Góc 3\Cao\s7 - Áo khoác che bình, bàn có nước.jpg",s07
+v3a_09.jpg,v3a,Góc 3\Cao\s8 - Ghế trên lối đi_ balo che bình_ cốc trên bàn_.jpg,s08
+v3a_10.jpg,v3a,Góc 3\Cao\s9 - Bừa.jpg,s09
+v3b_01.jpg,v3b,Góc 3\Thấp\s1 - Phòng gọn.jpg,s01
+v3b_02.jpg,v3b,"Góc 3\Thấp\s1.3 - Phòng gọn, bẫy.jpg",s01
+v3b_03.jpg,v3b,Góc 3\Thấp\s2 - Ghế trên lối đi.jpg,s02
+v3b_04.jpg,v3b,"Góc 3\Thấp\s3 - 3–4 đồ cá nhân trên bàn (điện thoại, ví, sách, áo khoác)_.jpg",s03
+v3b_05.jpg,v3b,Góc 3\Thấp\s5 - Bàn có nước.jpg,s05

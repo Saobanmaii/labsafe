@@ -1,0 +1,5 @@
+﻿Model,Tiêu chí,Số prompt,Ảnh 3 prompt đồng nhất,Fleiss κ giữa prompt,Độ khớp min–max,Biên độ
+gemini-3.5-flash,C1,3,0.70,0.49,0.64–0.82,0.18
+gemini-3.5-flash,C2,3,0.76,0.46,0.73–0.97,0.24
+gemini-3.5-flash,C3,3,0.97,0.96,0.88–0.91,0.03
+gemini-3.5-flash,C4,3,1.00,1.00,1.00–1.00,0.00

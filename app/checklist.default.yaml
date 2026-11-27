@@ -1,0 +1,128 @@
+# ============================================================================
+#  BẢNG KIỂM AN TOÀN PHÒNG THÍ NGHIỆM — cấu hình mặc định
+#  Sửa trực tiếp file app/checklist.yaml hoặc trên trang "Bảng kiểm" của dashboard.
+#  File này (checklist.default.yaml) là bản gốc để "Khôi phục mặc định".
+# ============================================================================
+version: 1
+
+# Nhóm tiêu chí: điểm được tính riêng cho từng nhóm
+groups:
+  bo_tri: "Bố trí, gọn gàng"
+  ve_sinh: "Vệ sinh"
+  an_toan: "An toàn PCCC"
+
+# Trọng số theo mức độ nghiêm trọng (dùng để tính điểm tổng)
+severity:
+  cao: {name: "Cao", weight: 3}
+  trung_binh: {name: "Trung bình", weight: 2}
+  thap: {name: "Thấp", weight: 1}
+
+# Loại vùng vẽ trên ảnh camera. color = BGR. risk = mức nguy cơ của vùng
+zone_types:
+  aisle: {name: "Lối đi", color: [80, 200, 80], risk: cao}
+  bench: {name: "Mặt bàn thí nghiệm", color: [230, 150, 40], risk: trung_binh}
+  extinguisher: {name: "Vị trí bình chữa cháy", color: [60, 60, 230], risk: cao}
+
+# ----------------------------------------------------------------------------
+# Tiêu chí. Có 3 loại luật:
+#   zone_occupancy : tỷ lệ phần "chân" vật cản chiếm vùng  >= threshold  -> vi phạm
+#   count_in_zone  : số vật thuộc classes có tâm trong vùng >= min_count -> vi phạm
+#                    (zone: null = đếm trên toàn ảnh)
+#   zone_visibility: vật mục tiêu nhìn thấy < min_visible, hoặc bị vật khác
+#                    che >= max_occlusion, hoặc không thấy -> vi phạm
+# hybrid_engine: chế độ "Kết hợp" dùng luật (rules) hay Gemini (vlm) cho tiêu chí này
+# vlm_description: mô tả tiếng Anh gửi cho Gemini
+# ----------------------------------------------------------------------------
+criteria:
+  - id: C1
+    name: "Vật cản lối đi"
+    group: bo_tri
+    severity: cao
+    enabled: true
+    type: zone_occupancy
+    zone: aisle
+    classes: [chair, backpack, suitcase, handbag, bench, cardboard box]
+    params: {footprint_frac: 0.25, threshold: 0.05}
+    hybrid_engine: rules
+    vlm_description: >-
+      Obstruction in walkway: VIOLATED if at least one object of backpack size or larger
+      (chair, backpack, box, bag, bucket, ...) is placed on the floor within the walkway, narrowing
+      or blocking it. Ignore people and objects fully under benches.
+
+  - id: C2
+    name: "Đồ cá nhân trên bàn thí nghiệm"
+    group: bo_tri
+    severity: trung_binh
+    enabled: true
+    type: count_in_zone
+    zone: bench
+    classes: [cell phone, laptop, backpack, handbag, book]
+    params: {min_count: 3}
+    hybrid_engine: vlm
+    vlm_description: >-
+      Personal items on lab bench: VIOLATED if 3 or more personal items (phone, personal laptop,
+      backpack, handbag, wallet, books or notebooks, jacket, hat) are on the lab bench surfaces. Lab
+      equipment, tools, fixed lab computers and instruction sheets do not count.
+
+  - id: C3
+    name: "Bình chữa cháy bị che chắn"
+    group: an_toan
+    severity: cao
+    enabled: true
+    type: zone_visibility
+    zone: extinguisher
+    target: fire extinguisher
+    classes: [chair, backpack, suitcase, handbag, cardboard box, cell phone, laptop, book, umbrella, tie]
+    params: {min_visible: 0.5, max_occlusion: 0.3333}
+    hybrid_engine: rules
+    vlm_description: >-
+      Fire extinguisher obstructed: VIOLATED if the fire extinguisher is covered by about one
+      third or more, an object in front makes it hard to reach, or its spot is empty. PASSES if it is
+      clearly visible and freely accessible.
+
+  - id: C4
+    name: "Đồ ăn, đồ uống"
+    group: ve_sinh
+    severity: trung_binh
+    enabled: true
+    type: count_in_zone
+    zone: null
+    classes: [cup, bottle, wine glass, bowl, banana, apple, sandwich, orange, pizza, donut, cake, hot dog, broccoli, carrot]
+    params: {min_count: 1}
+    hybrid_engine: vlm
+    vlm_description: >-
+      Food or drink: VIOLATED if any food or drink is visible (cups, mugs, drinking bottles, cans,
+      lunch boxes, snacks, fruit), even partly consumed. Chemical bottles, reagent containers, lab
+      glassware and beakers do NOT count.
+
+# ----------------------------------------------------------------------------
+detector:
+  coco_model: yolo11s.pt                  # YOLO11s huấn luyện sẵn trên COCO (80 lớp)
+  ext_model: models/extinguisher_best.pt  # YOLO11n nhóm tự huấn luyện (bình chữa cháy)
+  world_model: yolov8s-worldv2.pt         # YOLO-World: lớp từ vựng mở
+  world_classes: [cardboard box]          # thêm lớp ngoài COCO tại đây, vd: jacket
+  conf: 0.30
+  # Bỏ các khung "bottle"/"cup" của COCO nằm trên bình chữa cháy
+  # (lỗi chính trong bài báo: bình đỏ bị nhận là chai -> báo nhầm C4)
+  suppress_on_extinguisher:
+    enabled: true
+    classes: [bottle, cup]
+    overlap: 0.5
+
+vlm:
+  model: gemini-3.5-flash
+  blur_people_before_send: true   # làm mờ người trước khi gửi ảnh ra API bên ngoài
+
+video:
+  sample_every_s: 1.0    # lấy 1 khung hình mỗi N giây
+  confirm_frames: 3      # vi phạm kéo dài N khung liên tiếp mới ghi sự kiện
+  clear_frames: 3        # hết vi phạm N khung liên tiếp mới đóng sự kiện
+
+privacy:
+  blur_people: true          # ảnh lưu trong nhật ký sự kiện luôn được làm mờ người
+  blur_in_display: false     # làm mờ cả ảnh hiển thị trên màn hình
+
+alerts:
+  on_screen: true
+  sound: true
+  telegram: false   # cần TELEGRAM_BOT_TOKEN và TELEGRAM_CHAT_ID trong file .env

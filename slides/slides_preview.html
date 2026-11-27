@@ -1,0 +1,327 @@
+<!doctype html>
+<html lang="vi"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Báo cáo đề tài — Chấm điểm an toàn phòng thí nghiệm</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Lora:wght@500;600;700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap">
+<style>
+  body { margin:0; background:#2b2f36; font-family:'Be Vietnam Pro', Arial, sans-serif; }
+  .wrap { max-width:1280px; margin:0 auto; padding:24px 16px 64px; }
+  .frame { position:relative; width:100%; aspect-ratio:16/9; overflow:hidden; margin-top:32px; box-shadow:0 6px 24px rgba(0,0,0,.4); }
+  .stage { position:absolute; left:0; top:0; width:1920px; height:1080px; transform-origin:0 0; }
+  .stage section { position:relative; width:1920px; height:1080px; box-sizing:border-box; overflow:hidden; }
+  .stage section div { display:flex; flex-direction:column; box-sizing:border-box; }
+  .stage h1, .stage h2, .stage h3, .stage p { margin:0; }
+  .stage table { border-collapse:separate; border-spacing:0; width:100%; overflow:hidden; }
+  .stage th, .stage td { padding:0.35em 0.6em; border-bottom:1px solid #E2DED4; text-align:left; }
+  .stage x-shape[kind="arrow-right"] { display:block; clip-path:polygon(0 30%,60% 30%,60% 0,100% 50%,60% 100%,60% 70%,0 70%); flex:none; }
+  .stage x-icon { display:block; font-size:44px; line-height:1; }
+  .stage x-icon[name="Users"]::before { content:"👥"; }
+  .stage x-icon[name="Warning"]::before { content:"⚠️"; }
+  .stage x-icon[name="Database"]::before { content:"🗄️"; }
+  .notes { color:#d7dbe2; font-size:15px; line-height:1.5; margin:10px 4px 0; }
+  h1.doc { color:#fff; font-size:20px; font-weight:600; margin:0; }
+</style></head>
+<body><div class="wrap">
+<h1 class="doc">Báo cáo đề tài — Chấm điểm an toàn phòng thí nghiệm — bản xem offline (bản chính: link Artifact)</h1>
+<div class="frame"><div class="stage"><section id="cover" data-transition="fade" style="background:#14213D;color:#F7F6F2;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="position:absolute;left:0;top:0;width:24px;height:1080px;background:#E08A3C"></div>
+<p style="font-size:28px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#E8A462">Báo cáo đề tài · Phương pháp nghiên cứu khoa học</p>
+<div style="display:flex;flex-direction:column;gap:40px">
+<h1 style="font-family:'Lora', Georgia, serif;font-size:88px;font-weight:600;line-height:1.12;color:#F7F6F2">Chấm điểm an toàn phòng thí nghiệm từ ảnh</h1>
+<p style="font-size:40px;line-height:1.35;color:#C9D1E0">So sánh hệ thống dựa trên luật và mô hình ngôn ngữ–thị giác với đánh giá của con người</p>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:end">
+<div style="display:flex;flex-direction:column;gap:8px">
+<p style="font-size:32px;font-weight:600">Trần Tuấn Kiệt (B23DCPT176) · Lành Diệu Hương · Lê Quốc Dũng</p>
+<p style="font-size:28px;color:#C9D1E0">Học viện Công nghệ Bưu chính Viễn thông</p>
+</div>
+<p style="font-size:28px;color:#C9D1E0">07/10/2026</p>
+</div>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 1 · Lời nói:</b> Chào thầy và các bạn. Nhóm em xin trình bày đề tài: chấm điểm an toàn phòng thí nghiệm từ ảnh, so sánh hai cách chấm tự động với đánh giá của con người. Đây là báo cáo đề tài kèm kết quả sơ bộ.</p><div class="frame"><div class="stage"><section id="problem" data-transition="fade" style="background:#F7F6F2;color:#1B2436;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B8560F">Đặt vấn đề</p>
+<h2 style="font-family:'Lora', Georgia, serif;font-size:64px;font-weight:600;color:#14213D">Kiểm tra an toàn phòng thí nghiệm vẫn làm bằng tay</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFFFF;padding:40px;border:1px solid #E2DED4;border-radius:16px">
+<x-icon name="Users" style="color:#B8560F;width:56px;height:56px"></x-icon>
+<h3 style="font-size:36px;font-weight:600;color:#14213D">Tốn nhân lực</h3>
+<p style="font-size:28px;line-height:1.45;color:#4A5568">Cán bộ đi từng phòng đối chiếu bảng kiểm, không thể làm thường xuyên.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFFFF;padding:40px;border:1px solid #E2DED4;border-radius:16px">
+<x-icon name="Warning" style="color:#B8560F;width:56px;height:56px"></x-icon>
+<h3 style="font-size:36px;font-weight:600;color:#14213D">Thiếu nhất quán</h3>
+<p style="font-size:28px;line-height:1.45;color:#4A5568">Kết quả phụ thuộc người đánh giá và từng lần kiểm tra.</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:16px;background:#FFFFFF;padding:40px;border:1px solid #E2DED4;border-radius:16px">
+<x-icon name="Database" style="color:#B8560F;width:56px;height:56px"></x-icon>
+<h3 style="font-size:36px;font-weight:600;color:#14213D">Không lưu bằng chứng</h3>
+<p style="font-size:28px;line-height:1.45;color:#4A5568">Không theo dõi được mức độ cải thiện theo thời gian.</p>
+</div>
+</div>
+<p style="font-size:36px;line-height:1.4;color:#14213D;border-left:6px solid #E08A3C;padding:8px 0 8px 32px">Camera giám sát đã có sẵn. <b>Ảnh có thể tự động hoá một phần việc chấm điểm không, và tin cậy đến đâu?</b></p>
+<p style="position:absolute;left:128px;bottom:64px;width:400px;font-size:24px;color:#5B6475">2</p>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 2 · Lời nói:</b> Hiện nay việc kiểm tra an toàn phòng thí nghiệm chủ yếu là thủ công, có ba hạn chế: tốn người, kết quả không nhất quán và không lưu bằng chứng. Trong khi camera đã có sẵn, câu hỏi là có tận dụng ảnh để chấm tự động được không, và nếu được thì tin cậy đến đâu.</p><div class="frame"><div class="stage"><section id="gap" data-transition="fade" style="background:#F7F6F2;color:#1B2436;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B8560F">Tổng quan tài liệu</p>
+<h2 style="font-family:'Lora', Georgia, serif;font-size:64px;font-weight:600;color:#14213D">Nghiên cứu tập trung vào con người, chưa vào căn phòng</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:20px;background:#FFFFFF;padding:40px;border:1px solid #E2DED4;border-radius:16px">
+<h3 style="font-size:34px;font-weight:600;color:#14213D">Đã nhiều: phát hiện đồ bảo hộ</h3>
+<p style="font-size:28px;line-height:1.45;color:#4A5568">YOLOv5/v7 tại phòng thí nghiệm giáo dục, mAP 77,4% [1]</p>
+<p style="font-size:28px;line-height:1.45;color:#4A5568">YOLOv4–v6 phòng thực hành chế tạo, mAP 0,757 [2]</p>
+<p style="font-size:28px;line-height:1.45;color:#4A5568">YOLOv7 cải tiến cho đồ bảo hộ phòng thí nghiệm [3]</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px;background:#FFFFFF;padding:40px;border:1px solid #E2DED4;border-radius:16px">
+<h3 style="font-size:34px;font-weight:600;color:#14213D">Hướng mới: VLM chấm trực tiếp</h3>
+<p style="font-size:28px;line-height:1.45;color:#4A5568"><b style="color:#B8560F">37–58%</b> phán đoán an toàn sai dù nhận đúng hành động [12]</p>
+<p style="font-size:28px;line-height:1.45;color:#4A5568"><b style="color:#B8560F">85–100%</b> dự đoán dồn vào một lớp [9]</p>
+<p style="font-size:28px;line-height:1.45;color:#4A5568"><b style="color:#B8560F">32 điểm %</b> chênh lệch chỉ do đổi cách viết prompt [9]</p>
+</div>
+</div>
+<p style="font-size:32px;line-height:1.4;color:#14213D;border-left:6px solid #E08A3C;padding:8px 0 8px 32px"><b>Khoảng trống:</b> chưa có nghiên cứu so sánh hệ thống luật, VLM và người chấm trên điều kiện gọn gàng – vệ sinh – an toàn ở mức toàn cảnh.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:400px;font-size:24px;color:#5B6475">3</p>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 3 · Lời nói:</b> Các nghiên cứu hiện có chủ yếu phát hiện đồ bảo hộ trên người. Hướng mới là dùng mô hình ngôn ngữ–thị giác chấm trực tiếp, nhưng các bộ chuẩn gần đây cho thấy nó còn sai nhiều và nhạy với cách viết prompt. Chưa có ai so sánh hai hướng này với người chấm cho bài toán toàn cảnh căn phòng.</p><div class="frame"><div class="stage"><section id="rq" data-transition="fade" style="background:#14213D;color:#F7F6F2;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#E8A462">Câu hỏi nghiên cứu</p>
+<h2 style="font-family:'Lora', Georgia, serif;font-size:64px;font-weight:600;color:#F7F6F2">Ba câu hỏi nhóm cần trả lời</h2>
+</div>
+<div style="display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;gap:40px;align-items:baseline">
+<p style="font-family:'Lora', Georgia, serif;font-size:72px;font-weight:700;color:#E8A462;min-width:max-content">01</p>
+<p style="font-size:40px;line-height:1.35;color:#F7F6F2">Máy chấm khớp với người chấm đến đâu, <b>xét riêng từng tiêu chí</b>?</p>
+</div>
+<div style="display:flex;gap:40px;align-items:baseline">
+<p style="font-family:'Lora', Georgia, serif;font-size:72px;font-weight:700;color:#E8A462;min-width:max-content">02</p>
+<p style="font-size:40px;line-height:1.35;color:#F7F6F2">Hệ thống luật hay VLM gần với người hơn, và <b>với tiêu chí nào</b>?</p>
+</div>
+<div style="display:flex;gap:40px;align-items:baseline">
+<p style="font-family:'Lora', Georgia, serif;font-size:72px;font-weight:700;color:#E8A462;min-width:max-content">03</p>
+<p style="font-size:40px;line-height:1.35;color:#F7F6F2">VLM có <b>ổn định</b> khi đổi cách diễn đạt prompt không?</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:400px;font-size:24px;color:#C9D1E0">4</p>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 4 · Lời nói:</b> Nghiên cứu trả lời ba câu hỏi. Một: máy khớp với người đến đâu theo từng tiêu chí. Hai: giữa hệ thống luật và VLM, cách nào tốt hơn với tiêu chí nào. Ba: VLM có ổn định khi đổi cách hỏi không.</p><div class="frame"><div class="stage"><section id="design" data-transition="fade" style="background:#F7F6F2;color:#1B2436;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:56px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B8560F">Thiết kế nghiên cứu</p>
+<h2 style="font-family:'Lora', Georgia, serif;font-size:64px;font-weight:600;color:#14213D">Cùng một bộ ảnh, ba nguồn chấm độc lập</h2>
+</div>
+<div style="display:flex;gap:32px;align-items:center">
+<div style="display:flex;flex-direction:column;gap:8px;background:#14213D;padding:36px;border-radius:16px;width:280px">
+<p style="font-size:32px;font-weight:600;color:#F7F6F2">36 ảnh</p>
+<p style="font-size:24px;color:#C9D1E0">tự chụp tại phòng thí nghiệm</p>
+</div>
+<x-shape kind="arrow-right" style="background:#E08A3C;width:72px;height:36px"></x-shape>
+<div style="display:flex;flex-direction:column;gap:20px;flex:1">
+<div style="display:flex;flex-direction:column;gap:6px;background:#FFFFFF;padding:28px 32px;border:1px solid #E2DED4;border-left:8px solid #1F6F78;border-radius:12px">
+<h3 style="font-size:32px;font-weight:600;color:#14213D">1 · Người chấm — đáp án chuẩn</h3>
+<p style="font-size:26px;color:#4A5568">2–3 người chấm độc lập, lấy nhãn đa số</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;background:#FFFFFF;padding:28px 32px;border:1px solid #E2DED4;border-left:8px solid #B8560F;border-radius:12px">
+<h3 style="font-size:32px;font-weight:600;color:#14213D">2 · YOLO nhóm tự huấn luyện + bộ luật</h3>
+<p style="font-size:26px;color:#4A5568">phát hiện đối tượng, áp luật quan hệ không gian theo vùng</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;background:#FFFFFF;padding:28px 32px;border:1px solid #E2DED4;border-left:8px solid #5B6475;border-radius:12px">
+<h3 style="font-size:32px;font-weight:600;color:#14213D">3 · VLM (Gemini) — không huấn luyện</h3>
+<p style="font-size:26px;color:#4A5568">đưa ảnh và bảng tiêu chí, yêu cầu chấm, 3 cách viết prompt</p>
+</div>
+</div>
+<x-shape kind="arrow-right" style="background:#E08A3C;width:72px;height:36px"></x-shape>
+<div style="display:flex;flex-direction:column;gap:8px;background:#14213D;padding:36px;border-radius:16px;width:280px">
+<p style="font-size:32px;font-weight:600;color:#F7F6F2">So sánh</p>
+<p style="font-size:24px;color:#C9D1E0">từng tiêu chí bằng hệ số κ</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:400px;font-size:24px;color:#5B6475">5</p>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 5 · Lời nói:</b> Thiết kế ba cột: cùng một bộ ảnh được chấm độc lập bởi ba nguồn. Người chấm là đáp án chuẩn. Cột hai là hệ thống nhóm tự xây dựng: YOLO cộng bộ luật. Cột ba là Gemini, không huấn luyện. Sau đó so sánh từng tiêu chí bằng hệ số kappa.</p><div class="frame"><div class="stage"><section id="rubric" data-transition="fade" style="background:#F7F6F2;color:#1B2436;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B8560F">Bảng tiêu chí</p>
+<h2 style="font-family:'Lora', Georgia, serif;font-size:64px;font-weight:600;color:#14213D">Bốn tiêu chí, chấm Đạt hoặc Vi phạm</h2>
+</div>
+<table style="font-size:28px;color:#1B2436;background:#FFFFFF;border:1px solid #E2DED4;border-radius:12px">
+<tr style="background:#EDEAE2"><th style="width:22%;text-align:left">Tiêu chí</th><th style="width:42%;text-align:left">Vi phạm khi</th><th style="width:36%;text-align:left">Luật máy</th></tr>
+<tr><td>C1 · Lối đi</td><td>Có vật cỡ từ balo trở lên trên sàn lối đi</td><td>Tỷ lệ chiếm dụng R ≥ 5%</td></tr>
+<tr><td>C2 · Đồ cá nhân</td><td>Từ 3 vật dụng cá nhân trên bàn thí nghiệm</td><td>Đếm vật có tâm trong vùng bàn ≥ 3</td></tr>
+<tr><td>C3 · Bình chữa cháy</td><td>Bị che từ 1/3, khó tiếp cận hoặc không còn ở vị trí</td><td>Không thấy bình, nhìn thấy &lt; 50% hoặc bị che ≥ 1/3</td></tr>
+<tr><td>C4 · Đồ ăn uống</td><td>Có bất kỳ đồ ăn, đồ uống (không tính dụng cụ thí nghiệm)</td><td>Có ít nhất 1 đối tượng đồ ăn uống</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.4;color:#4A5568">Thu hẹp từ 6 tiêu chí, thang 3 mức trong đề cương: bỏ "hóa chất ngoài tủ" và "dây điện" (khó phát hiện từ ảnh), chuyển sang nhị phân để giảm tính chủ quan.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:400px;font-size:24px;color:#5B6475">6</p>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 6 · Lời nói:</b> Bảng tiêu chí gồm bốn tiêu chí nhị phân. So với đề cương, nhóm đã thu hẹp từ sáu tiêu chí ba mức xuống bốn tiêu chí đạt hoặc vi phạm, để người chấm ít chủ quan hơn và bỏ hai tiêu chí khó phát hiện từ ảnh.</p><div class="frame"><div class="stage"><section id="rules" data-transition="fade" style="background:#F7F6F2;color:#1B2436;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B8560F">Cột 2 · Hệ thống dựa trên luật</p>
+<h2 style="font-family:'Lora', Georgia, serif;font-size:64px;font-weight:600;color:#14213D">Thuật toán nền: tỷ lệ chiếm dụng lối đi</h2>
+</div>
+<div style="display:flex;gap:64px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:24px;flex:1">
+<p style="font-size:44px;font-family:'Lora', Georgia, serif;color:#14213D;background:#FFFFFF;border:1px solid #E2DED4;border-radius:12px;padding:24px 32px">R = |(∪ đáy hộp vật cản) ∩ A| / |A|</p>
+<p style="font-size:28px;line-height:1.45;color:#4A5568">Lưới 10×10, lối đi A từ ô (3,1) đến (7,10): <b>50 ô</b>.</p>
+<p style="font-size:28px;line-height:1.45;color:#4A5568">Vật cản ô (4,2)–(6,4): <b>9 ô</b>, nằm trọn trong lối đi.</p>
+<p style="font-size:32px;line-height:1.4;color:#14213D"><b>R = 9 / 50 = 18% ≥ 15%</b> → <span style="color:#B8560F"><b>Vi phạm</b></span></p>
+<p style="font-size:26px;line-height:1.45;color:#4A5568">Phép hợp ∪ để vật chồng nhau không bị tính hai lần. Cả 3 ví dụ trong đề cương đều nằm trong bộ kiểm thử tự động.</p>
+</div>
+<svg aria-label="Lưới 10 nhân 10: vùng lối đi cột 3 đến 7 tô xanh, vật cản 3 nhân 3 ô tô cam" width="440" height="440" viewBox="0 0 440 440">
+<rect x="0" y="0" width="440" height="440" fill="#FFFFFF"/>
+<rect x="88" y="0" width="220" height="440" fill="#CFE6E3"/>
+<rect x="132" y="44" width="132" height="132" fill="#E08A3C"/>
+<g stroke="#B9B4A8" stroke-width="1">
+<line x1="44" y1="0" x2="44" y2="440"/><line x1="88" y1="0" x2="88" y2="440"/><line x1="132" y1="0" x2="132" y2="440"/><line x1="176" y1="0" x2="176" y2="440"/><line x1="220" y1="0" x2="220" y2="440"/><line x1="264" y1="0" x2="264" y2="440"/><line x1="308" y1="0" x2="308" y2="440"/><line x1="352" y1="0" x2="352" y2="440"/><line x1="396" y1="0" x2="396" y2="440"/>
+<line x1="0" y1="44" x2="440" y2="44"/><line x1="0" y1="88" x2="440" y2="88"/><line x1="0" y1="132" x2="440" y2="132"/><line x1="0" y1="176" x2="440" y2="176"/><line x1="0" y1="220" x2="440" y2="220"/><line x1="0" y1="264" x2="440" y2="264"/><line x1="0" y1="308" x2="440" y2="308"/><line x1="0" y1="352" x2="440" y2="352"/><line x1="0" y1="396" x2="440" y2="396"/>
+</g>
+<rect x="88" y="0" width="220" height="440" fill="none" stroke="#1F6F78" stroke-width="4"/>
+<rect x="0" y="0" width="440" height="440" fill="none" stroke="#14213D" stroke-width="2"/>
+</svg>
+</div>
+<p style="position:absolute;left:1312px;top:808px;width:480px;font-size:24px;color:#5B6475">Xanh: lối đi A · Cam: vật cản</p>
+<p style="position:absolute;left:128px;bottom:64px;width:400px;font-size:24px;color:#5B6475">7</p>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 7 · Lời nói:</b> Thuật toán nền là tỷ lệ chiếm dụng lối đi: lấy phần đáy hộp bao của vật cản giao với vùng lối đi, chia cho diện tích lối đi. Ví dụ tính tay: lối đi 50 ô, vật cản 9 ô, R bằng 18 phần trăm, vượt ngưỡng 15 phần trăm nên vi phạm. Trong hệ thống thật nhóm dùng ngưỡng 5 phần trăm, chọn trước khi thu dữ liệu.</p><div class="frame"><div class="stage"><section id="trained" data-transition="fade" style="background:#F7F6F2;color:#1B2436;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B8560F">Cột 2 · Ba bộ phát hiện</p>
+<h2 style="font-family:'Lora', Georgia, serif;font-size:64px;font-weight:600;color:#14213D">Tự huấn luyện phần COCO không có: bình chữa cháy</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFFFF;padding:36px;border:1px solid #E2DED4;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600;color:#14213D">YOLO11 – COCO</h3>
+<p style="font-size:26px;line-height:1.45;color:#4A5568">Có sẵn: ghế, balo, túi, cốc, chai, đồ ăn, điện thoại, laptop, sách</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFFFF;padding:36px;border:2px solid #B8560F;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600;color:#B8560F">YOLO11n tự huấn luyện</h3>
+<p style="font-size:26px;line-height:1.45;color:#4A5568">Bình chữa cháy, trên bộ Fire-ART (ISPRS 2025, CC BY 4.0)</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFFFF;padding:36px;border:1px solid #E2DED4;border-radius:16px">
+<h3 style="font-size:32px;font-weight:600;color:#14213D">YOLO-World</h3>
+<p style="font-size:26px;line-height:1.45;color:#4A5568">Từ vựng mở, không huấn luyện: thùng carton</p>
+</div>
+</div>
+<div style="display:flex;gap:64px">
+<div style="display:flex;flex-direction:column;gap:4px">
+<p style="font-family:'Lora', Georgia, serif;font-size:72px;font-weight:700;color:#14213D">179</p>
+<p style="font-size:24px;color:#4A5568">ảnh có bình (207 đối tượng)</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px">
+<p style="font-family:'Lora', Georgia, serif;font-size:72px;font-weight:700;color:#14213D">287 / 71</p>
+<p style="font-size:24px;color:#4A5568">ảnh huấn luyện / kiểm định</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:4px">
+<p style="font-family:'Lora', Georgia, serif;font-size:72px;font-weight:700;color:#B8560F">[__]</p>
+<p style="font-size:24px;color:#4A5568">mAP@0,5 trên tập kiểm định</p>
+</div>
+</div>
+<p style="position:absolute;left:128px;bottom:64px;width:400px;font-size:24px;color:#5B6475">8</p>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 8 · Lời nói:</b> Hệ thống luật dùng ba bộ phát hiện. YOLO huấn luyện sẵn trên COCO nhận được phần lớn đồ vật. COCO không có bình chữa cháy nên nhóm tự huấn luyện YOLO11n trên bộ dữ liệu công khai Fire-ART. Khi thử, YOLO-World không nhận ra bình chữa cháy màu xanh, còn YOLO COCO nhận nhầm thành xe đạp, nên việc tự huấn luyện là cần thiết.</p><div class="frame"><div class="stage"><section id="vlm" data-transition="fade" style="background:#F7F6F2;color:#1B2436;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B8560F">Cột 3 · Mô hình ngôn ngữ–thị giác</p>
+<h2 style="font-family:'Lora', Georgia, serif;font-size:64px;font-weight:600;color:#14213D">Gemini 2.5 Flash, hỏi theo ba cách</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:32px">
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFFFF;padding:36px;border:1px solid #E2DED4;border-radius:16px">
+<p style="font-family:'Lora', Georgia, serif;font-size:56px;font-weight:700;color:#B8560F">P1</p>
+<h3 style="font-size:32px;font-weight:600;color:#14213D">Chi tiết</h3>
+<p style="font-size:26px;line-height:1.45;color:#4A5568">Định nghĩa đầy đủ từng tiêu chí như bảng chấm của người</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFFFF;padding:36px;border:1px solid #E2DED4;border-radius:16px">
+<p style="font-family:'Lora', Georgia, serif;font-size:56px;font-weight:700;color:#B8560F">P2</p>
+<h3 style="font-size:32px;font-weight:600;color:#14213D">Rút gọn</h3>
+<p style="font-size:26px;line-height:1.45;color:#4A5568">Mỗi tiêu chí một dòng</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px;background:#FFFFFF;padding:36px;border:1px solid #E2DED4;border-radius:16px">
+<p style="font-family:'Lora', Georgia, serif;font-size:56px;font-weight:700;color:#B8560F">P3</p>
+<h3 style="font-size:32px;font-weight:600;color:#14213D">Đảo thứ tự</h3>
+<p style="font-size:26px;line-height:1.45;color:#4A5568">Như P1 nhưng tiêu chí theo thứ tự C4 → C1</p>
+</div>
+</div>
+<p style="font-size:30px;line-height:1.45;color:#14213D;border-left:6px solid #E08A3C;padding:8px 0 8px 32px">Không huấn luyện, không ví dụ mẫu · nhiệt độ 0 · đầu ra JSON · ảnh thu về cạnh 1568 px. Ba prompt cùng nghĩa → đo được độ ổn định (câu hỏi 3).</p>
+<p style="position:absolute;left:128px;bottom:64px;width:400px;font-size:24px;color:#5B6475">9</p>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 9 · Lời nói:</b> Cột ba là Gemini 2.5 Flash. Nhóm chọn bản này vì ổn định nhất khi thử: các bản mới hơn thường bị quá tải. Mỗi ảnh được hỏi theo ba cách cùng nghĩa: chi tiết, rút gọn và đảo thứ tự tiêu chí, để đo xem kết quả có thay đổi theo cách hỏi hay không.</p><div class="frame"><div class="stage"><section id="data" data-transition="fade" style="background:#F7F6F2;color:#1B2436;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B8560F">Dữ liệu thử nghiệm</p>
+<h2 style="font-family:'Lora', Georgia, serif;font-size:64px;font-weight:600;color:#14213D">4 góc camera × 9 kịch bản = 36 ảnh</h2>
+</div>
+<table style="font-size:26px;color:#1B2436;background:#FFFFFF;border:1px solid #E2DED4;border-radius:12px">
+<tr style="background:#EDEAE2"><th style="width:19%;text-align:left">Kịch bản</th><th style="width:9%;text-align:center">s01</th><th style="width:9%;text-align:center">s02</th><th style="width:9%;text-align:center">s03</th><th style="width:9%;text-align:center">s04</th><th style="width:9%;text-align:center">s05</th><th style="width:9%;text-align:center">s06</th><th style="width:9%;text-align:center">s07</th><th style="width:9%;text-align:center">s08</th><th style="width:9%;text-align:center">s09</th></tr>
+<tr><td>C1 Lối đi</td><td>–</td><td>VP</td><td>–</td><td>–</td><td>–</td><td>VP</td><td>–</td><td>VP</td><td>VP</td></tr>
+<tr><td>C2 Đồ cá nhân</td><td>–</td><td>–</td><td>VP</td><td>–</td><td>–</td><td>VP</td><td>–</td><td>–</td><td>VP</td></tr>
+<tr><td>C3 Bình CC</td><td>–</td><td>–</td><td>–</td><td>VP</td><td>–</td><td>–</td><td>VP</td><td>VP</td><td>VP</td></tr>
+<tr><td>C4 Đồ ăn uống</td><td>–</td><td>–</td><td>–</td><td>–</td><td>VP</td><td>–</td><td>VP</td><td>VP</td><td>VP</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.45;color:#4A5568">VP = dàn dựng vi phạm (khoảng 40% ảnh mỗi tiêu chí). s01 và s03 có chai hóa chất làm "bẫy" cho C4. Đáp án chuẩn là <b>nhãn đa số của 2–3 người chấm</b> không tham gia dàn dựng, chấm độc lập, thứ tự ảnh xáo trộn.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:400px;font-size:24px;color:#5B6475">10</p>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 10 · Lời nói:</b> Bộ ảnh thử nghiệm gồm 36 ảnh: 4 góc camera cố định, mỗi góc 9 kịch bản dàn dựng sao cho mỗi tiêu chí vi phạm khoảng 40 phần trăm. Có tình huống bẫy là chai hóa chất, để xem máy có nhầm với đồ uống không. Kịch bản chỉ là ý định dàn dựng; đáp án chuẩn là nhãn đa số của người chấm.</p><div class="frame"><div class="stage"><section id="results" data-transition="fade" style="background:#F7F6F2;color:#1B2436;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:40px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#B8560F">Kết quả sơ bộ</p>
+<h2 style="font-family:'Lora', Georgia, serif;font-size:64px;font-weight:600;color:#14213D">[Câu kết luận chính — điền sau khi có số liệu]</h2>
+</div>
+<table style="font-size:28px;color:#1B2436;background:#FFFFFF;border:1px solid #E2DED4;border-radius:12px">
+<tr style="background:#EDEAE2"><th style="width:28%;text-align:left">Tiêu chí</th><th style="width:18%;text-align:center">Người (Fleiss κ)</th><th style="width:18%;text-align:center">Luật (κ)</th><th style="width:18%;text-align:center">VLM P1 (κ)</th><th style="width:18%;text-align:center">VLM P1–P3</th></tr>
+<tr><td>C1 Lối đi</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td></tr>
+<tr><td>C2 Đồ cá nhân</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td></tr>
+<tr><td>C3 Bình chữa cháy</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td></tr>
+<tr><td>C4 Đồ ăn uống</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td><td style="text-align:center">[__]</td></tr>
+</table>
+<p style="font-size:26px;line-height:1.45;color:#4A5568">κ diễn giải theo Landis & Koch: 0,41–0,60 trung bình · 0,61–0,80 đáng kể · &gt; 0,80 gần như hoàn hảo. Cột cuối: biên độ độ khớp giữa 3 prompt.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:400px;font-size:24px;color:#5B6475">11</p>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 11 · Lời nói:</b> [Điền sau khi có kết quả ngày 06/10.]</p><div class="frame"><div class="stage"><section id="next" data-transition="fade" style="background:#14213D;color:#F7F6F2;font-family:'Be Vietnam Pro', Arial, sans-serif;padding:128px 128px 160px;display:flex;flex-direction:column;gap:48px">
+<div style="display:flex;flex-direction:column;gap:16px">
+<p style="font-size:24px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:#E8A462">Hạn chế và kế hoạch</p>
+<h2 style="font-family:'Lora', Georgia, serif;font-size:64px;font-weight:600;color:#F7F6F2">Từ kết quả sơ bộ đến báo cáo cuối kỳ</h2>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:64px">
+<div style="display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:36px;font-weight:600;color:#E8A462">Hạn chế</h3>
+<p style="font-size:28px;line-height:1.45;color:#C9D1E0">Ảnh dàn dựng, chưa phải camera giám sát thực tế</p>
+<p style="font-size:28px;line-height:1.45;color:#C9D1E0">36 ảnh, 2–3 người chấm: khoảng tin cậy của κ còn rộng</p>
+<p style="font-size:28px;line-height:1.45;color:#C9D1E0">Luật tính trên ảnh 2D, chưa hiệu chỉnh phối cảnh</p>
+</div>
+<div style="display:flex;flex-direction:column;gap:20px">
+<h3 style="font-size:36px;font-weight:600;color:#E8A462">Đến cuối kỳ</h3>
+<p style="font-size:28px;line-height:1.45;color:#C9D1E0">Mở rộng bộ ảnh, thêm phòng và góc camera</p>
+<p style="font-size:28px;line-height:1.45;color:#C9D1E0">Bổ sung tiêu chí hóa chất ngoài tủ và dây điện</p>
+<p style="font-size:28px;line-height:1.45;color:#C9D1E0">Thử kết hợp luật cho tiêu chí đếm được, VLM cho tiêu chí cần ngữ cảnh</p>
+</div>
+</div>
+<p style="font-family:'Lora', Georgia, serif;font-size:44px;font-weight:600;color:#F7F6F2">Nhóm em xin cảm ơn và mong nhận góp ý của thầy.</p>
+<p style="position:absolute;left:128px;bottom:64px;width:400px;font-size:24px;color:#C9D1E0">12</p>
+
+</section>
+</div></div>
+<p class="notes"><b>Slide 12 · Lời nói:</b> Hạn chế chính là ảnh dàn dựng, quy mô nhỏ và luật tính trên ảnh 2D. Đến cuối kỳ nhóm sẽ mở rộng dữ liệu, bổ sung hai tiêu chí còn lại và thử kết hợp hai hướng. Nhóm em xin cảm ơn và mong nhận góp ý của thầy.</p>
+</div>
+<script>
+  function fit() { document.querySelectorAll('.frame').forEach(f => {
+    f.firstElementChild.style.transform = 'scale(' + (f.clientWidth / 1920) + ')'; }); }
+  addEventListener('resize', fit); fit();
+</script>
+</body></html>

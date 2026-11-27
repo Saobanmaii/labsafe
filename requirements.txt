@@ -1,0 +1,27 @@
+# Lõi phát hiện + luật
+ultralytics>=8.3.0
+torch            # cài bản có CUDA nếu có GPU: https://pytorch.org/get-started/locally/
+shapely>=2.0
+opencv-python-headless
+pillow
+numpy
+pandas
+pyyaml
+scikit-learn
+matplotlib
+# YOLO-World (từ vựng mở) cần CLIP
+git+https://github.com/ultralytics/CLIP.git
+
+# Ứng dụng
+streamlit>=1.50
+streamlit-image-coordinates
+
+# Gemini (tuỳ chọn)
+google-genai
+
+# Huấn luyện LabSafe-6 (app/train)
+ijson
+
+# Bài báo NCKH (src/)
+anthropic
+openpyxl

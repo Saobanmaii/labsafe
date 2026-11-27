@@ -1,0 +1,118 @@
+﻿image,Tiêu chí,Phương pháp,Người (đa số),Máy,Loại lỗi,Lý do VLM (P1)
+v1_s02.jpg,C1,Luật (YOLO),1,0,FN (bỏ sót),demo
+v1_s05.jpg,C1,Luật (YOLO),0,1,FP (báo động giả),demo
+v2_s01.jpg,C1,Luật (YOLO),0,1,FP (báo động giả),demo
+v2_s02.jpg,C1,Luật (YOLO),1,0,FN (bỏ sót),demo
+v2_s05.jpg,C1,Luật (YOLO),0,1,FP (báo động giả),demo
+v3_s03.jpg,C1,Luật (YOLO),0,1,FP (báo động giả),demo
+v3_s06.jpg,C1,Luật (YOLO),1,0,FN (bỏ sót),demo
+v4_s02.jpg,C1,Luật (YOLO),1,0,FN (bỏ sót),demo
+v4_s04.jpg,C1,Luật (YOLO),0,1,FP (báo động giả),demo
+v4_s05.jpg,C1,Luật (YOLO),1,0,FN (bỏ sót),demo
+v1_s02.jpg,C2,Luật (YOLO),1,0,FN (bỏ sót),demo
+v1_s03.jpg,C2,Luật (YOLO),1,0,FN (bỏ sót),demo
+v1_s06.jpg,C2,Luật (YOLO),1,0,FN (bỏ sót),demo
+v1_s08.jpg,C2,Luật (YOLO),0,1,FP (báo động giả),demo
+v2_s02.jpg,C2,Luật (YOLO),0,1,FP (báo động giả),demo
+v2_s04.jpg,C2,Luật (YOLO),0,1,FP (báo động giả),demo
+v3_s01.jpg,C2,Luật (YOLO),1,0,FN (bỏ sót),demo
+v3_s02.jpg,C2,Luật (YOLO),0,1,FP (báo động giả),demo
+v3_s04.jpg,C2,Luật (YOLO),1,0,FN (bỏ sót),demo
+v3_s09.jpg,C2,Luật (YOLO),1,0,FN (bỏ sót),demo
+v4_s06.jpg,C2,Luật (YOLO),1,0,FN (bỏ sót),demo
+v1_s01.jpg,C3,Luật (YOLO),0,1,FP (báo động giả),demo
+v1_s05.jpg,C3,Luật (YOLO),0,1,FP (báo động giả),demo
+v1_s06.jpg,C3,Luật (YOLO),0,1,FP (báo động giả),demo
+v3_s02.jpg,C3,Luật (YOLO),0,1,FP (báo động giả),demo
+v3_s04.jpg,C3,Luật (YOLO),1,0,FN (bỏ sót),demo
+v3_s08.jpg,C3,Luật (YOLO),1,0,FN (bỏ sót),demo
+v4_s04.jpg,C3,Luật (YOLO),1,0,FN (bỏ sót),demo
+v1_s03.jpg,C4,Luật (YOLO),0,1,FP (báo động giả),demo
+v1_s06.jpg,C4,Luật (YOLO),0,1,FP (báo động giả),demo
+v3_s03.jpg,C4,Luật (YOLO),0,1,FP (báo động giả),demo
+v4_s02.jpg,C4,Luật (YOLO),0,1,FP (báo động giả),demo
+v4_s03.jpg,C4,Luật (YOLO),0,1,FP (báo động giả),demo
+v4_s07.jpg,C4,Luật (YOLO),1,0,FN (bỏ sót),demo
+v2_s06.jpg,C1,VLM P1 (demo-vlm),1,0,FN (bỏ sót),demo
+v3_s09.jpg,C1,VLM P1 (demo-vlm),1,0,FN (bỏ sót),demo
+v4_s05.jpg,C1,VLM P1 (demo-vlm),1,0,FN (bỏ sót),demo
+v4_s06.jpg,C1,VLM P1 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s02.jpg,C2,VLM P1 (demo-vlm),1,0,FN (bỏ sót),demo
+v1_s04.jpg,C2,VLM P1 (demo-vlm),0,1,FP (báo động giả),demo
+v3_s04.jpg,C2,VLM P1 (demo-vlm),1,0,FN (bỏ sót),demo
+v4_s09.jpg,C2,VLM P1 (demo-vlm),1,0,FN (bỏ sót),demo
+v1_s02.jpg,C3,VLM P1 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s03.jpg,C3,VLM P1 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s05.jpg,C3,VLM P1 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s02.jpg,C3,VLM P1 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s06.jpg,C3,VLM P1 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s08.jpg,C3,VLM P1 (demo-vlm),1,0,FN (bỏ sót),demo
+v2_s09.jpg,C3,VLM P1 (demo-vlm),1,0,FN (bỏ sót),demo
+v3_s04.jpg,C3,VLM P1 (demo-vlm),1,0,FN (bỏ sót),demo
+v3_s06.jpg,C3,VLM P1 (demo-vlm),0,1,FP (báo động giả),demo
+v3_s08.jpg,C3,VLM P1 (demo-vlm),1,0,FN (bỏ sót),demo
+v3_s09.jpg,C3,VLM P1 (demo-vlm),1,0,FN (bỏ sót),demo
+v4_s05.jpg,C3,VLM P1 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s02.jpg,C4,VLM P1 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s02.jpg,C1,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v1_s04.jpg,C1,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s05.jpg,C1,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s06.jpg,C1,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v1_s09.jpg,C1,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v2_s04.jpg,C1,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v3_s02.jpg,C1,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v3_s04.jpg,C1,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v3_s08.jpg,C1,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v4_s04.jpg,C1,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s06.jpg,C2,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v2_s02.jpg,C2,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s03.jpg,C2,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v2_s06.jpg,C2,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v3_s02.jpg,C2,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v3_s09.jpg,C2,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v4_s01.jpg,C2,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s01.jpg,C3,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s02.jpg,C3,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s04.jpg,C3,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v2_s01.jpg,C3,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s02.jpg,C3,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s03.jpg,C3,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s04.jpg,C3,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v2_s05.jpg,C3,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s09.jpg,C3,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v3_s01.jpg,C3,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v3_s05.jpg,C3,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v3_s06.jpg,C3,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v4_s06.jpg,C3,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v4_s07.jpg,C3,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v1_s02.jpg,C4,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s03.jpg,C4,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s06.jpg,C4,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s03.jpg,C4,VLM P2 (demo-vlm),0,1,FP (báo động giả),demo
+v3_s05.jpg,C4,VLM P2 (demo-vlm),1,0,FN (bỏ sót),demo
+v1_s01.jpg,C1,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s02.jpg,C1,VLM P3 (demo-vlm),1,0,FN (bỏ sót),demo
+v1_s07.jpg,C1,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s05.jpg,C1,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s06.jpg,C1,VLM P3 (demo-vlm),1,0,FN (bỏ sót),demo
+v2_s07.jpg,C1,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v4_s01.jpg,C1,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v4_s04.jpg,C1,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v4_s05.jpg,C1,VLM P3 (demo-vlm),1,0,FN (bỏ sót),demo
+v4_s06.jpg,C1,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v4_s08.jpg,C1,VLM P3 (demo-vlm),1,0,FN (bỏ sót),demo
+v1_s02.jpg,C2,VLM P3 (demo-vlm),1,0,FN (bỏ sót),demo
+v1_s08.jpg,C2,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s05.jpg,C2,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v3_s04.jpg,C2,VLM P3 (demo-vlm),1,0,FN (bỏ sót),demo
+v3_s05.jpg,C2,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v4_s07.jpg,C2,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v1_s09.jpg,C3,VLM P3 (demo-vlm),1,0,FN (bỏ sót),demo
+v2_s01.jpg,C3,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v2_s07.jpg,C3,VLM P3 (demo-vlm),1,0,FN (bỏ sót),demo
+v3_s02.jpg,C3,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v3_s07.jpg,C3,VLM P3 (demo-vlm),1,0,FN (bỏ sót),demo
+v4_s08.jpg,C3,VLM P3 (demo-vlm),1,0,FN (bỏ sót),demo
+v1_s02.jpg,C4,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo
+v3_s09.jpg,C4,VLM P3 (demo-vlm),1,0,FN (bỏ sót),demo
+v4_s04.jpg,C4,VLM P3 (demo-vlm),0,1,FP (báo động giả),demo

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Vẽ vùng phòng thí nghiệm</title>
+<style>
+  :root { --bg:#fcfcfb; --fg:#0b0b0b; --muted:#52514e; --line:#e6e5e0; --accent:#2a78d6; }
+  body { margin:0; font:14px/1.4 system-ui, sans-serif; background:var(--bg); color:var(--fg); }
+  header { padding:10px 16px; border-bottom:1px solid var(--line); display:flex; flex-wrap:wrap; gap:10px; align-items:center; }
+  header h1 { font-size:16px; margin:0 12px 0 0; }
+  main { display:flex; gap:12px; padding:12px 16px; }
+  aside { width:240px; flex:none; }
+  aside h2 { font-size:13px; margin:12px 0 6px; color:var(--muted); text-transform:uppercase; }
+  #list { max-height:45vh; overflow:auto; border:1px solid var(--line); }
+  #list div { padding:4px 8px; cursor:pointer; }
+  #list div.on { background:var(--accent); color:#fff; }
+  #list div .tag { float:right; font-size:11px; opacity:.75; }
+  .zt label { display:block; padding:3px 0; cursor:pointer; }
+  .sw { display:inline-block; width:10px; height:10px; border-radius:2px; margin-right:6px; vertical-align:middle; }
+  #wrap { flex:1; min-width:0; }
+  canvas { max-width:100%; cursor:crosshair; border:1px solid var(--line); }
+  button, .btn { font:inherit; padding:5px 10px; border:1px solid var(--line); background:#fff; border-radius:4px; cursor:pointer; }
+  button.primary { background:var(--accent); color:#fff; border-color:var(--accent); }
+  .help { color:var(--muted); font-size:12px; }
+  input[type=file] { display:none; }
+  @media (max-width:800px) { main { flex-direction:column; } aside { width:auto; } }
+</style>
+</head>
+<body>
+<header>
+  <h1>Vẽ vùng</h1>
+  <label class="btn">1. Mở ảnh (chọn nhiều)<input type="file" id="imgs" accept="image/*" multiple></label>
+  <label class="btn">Nạp zones.json cũ<input type="file" id="load" accept=".json"></label>
+  <button class="primary" id="save">Tải zones.json</button>
+  <span class="help">Click để thêm điểm · <b>Enter</b> hoàn tất đa giác · <b>Backspace</b> hoàn tác · mỗi góc chụp (v1, v2…) chỉ cần vẽ 1 lần</span>
+</header>
+<main>
+  <aside>
+    <h2>Loại vùng</h2>
+    <div class="zt">
+      <label><input type="radio" name="zt" value="aisle" checked> <span class="sw" style="background:#50c850"></span>Lối đi (sàn)</label>
+      <label><input type="radio" name="zt" value="bench"> <span class="sw" style="background:#2896e6"></span>Mặt bàn thí nghiệm</label>
+      <label><input type="radio" name="zt" value="extinguisher"> <span class="sw" style="background:#e63c3c"></span>Vị trí bình chữa cháy</label>
+    </div>
+    <p class="help">Bình chữa cháy: vẽ <b>sát quanh thân bình</b> trên ảnh bình không bị che (kịch bản s01).</p>
+    <button id="finish">Hoàn tất đa giác</button>
+    <button id="undo">Hoàn tác</button>
+    <button id="clear">Xoá vùng đang hiển thị</button>
+    <h2>Ảnh lệch khung</h2>
+    <label class="help" style="display:block;cursor:pointer"><input type="checkbox" id="own"> <b>Vẽ riêng cho ảnh này</b> (khi ảnh bị lệch so với các ảnh khác cùng góc)</label>
+    <h2>Ảnh</h2>
+    <div id="list"></div>
+    <p class="help" id="status"></p>
+  </aside>
+  <div id="wrap"><canvas id="cv" width="800" height="500"></canvas></div>
+</main>
+<script>
+const COLORS = { aisle: "#50c850", bench: "#2896e6", extinguisher: "#e63c3c" };
+let files = [], cur = -1, img = null, zones = {}, draft = [];
+const cv = document.getElementById("cv"), ctx = cv.getContext("2d");
+const viewOf = n => n.replace(/\.[^.]+$/, "").split("_")[0];
+const stemOf = n => n.replace(/\.[^.]+$/, "");
+const zt = () => document.querySelector("input[name=zt]:checked").value;
+const own = document.getElementById("own");
+// Vùng đang sửa: của riêng ảnh (khoá = tên ảnh) nếu tick ô "vẽ riêng", ngược lại của cả góc (khoá = v1, v2a…)
+const activeKey = () => own.checked ? stemOf(files[cur].name) : viewOf(files[cur].name);
+own.onchange = () => {
+  if (cur < 0) return;
+  const s = stemOf(files[cur].name);
+  if (own.checked) zones[s] = zones[s] || {};
+  else if (zones[s] && (!Object.keys(zones[s]).length || confirm(`Xoá vùng riêng của ${s} và dùng lại vùng của góc?`))) delete zones[s];
+  else own.checked = true;
+  draft = []; renderList(); draw();
+};
+
+document.getElementById("imgs").onchange = e => {
+  files = [...e.target.files].sort((a, b) => a.name.localeCompare(b.name));
+  renderList(); if (files.length) open(0);
+};
+document.getElementById("load").onchange = async e => {
+  try { zones = JSON.parse(await e.target.files[0].text()); renderList(); draw(); }
+  catch (err) { alert("File JSON không hợp lệ: " + err.message); }
+};
+document.getElementById("save").onclick = () => {
+  const blob = new Blob([JSON.stringify(zones, null, 1)], { type: "application/json" });
+  const a = Object.assign(document.createElement("a"), { href: URL.createObjectURL(blob), download: "zones.json" });
+  a.click();
+};
+document.getElementById("finish").onclick = finish;
+document.getElementById("undo").onclick = undo;
+document.getElementById("clear").onclick = () => {
+  if (cur < 0) return; const k = activeKey();
+  if (confirm(`Xoá toàn bộ vùng của ${k}?`)) { zones[k] = {}; if (!own.checked) delete zones[k]; draft = []; renderList(); draw(); }
+};
+document.addEventListener("keydown", e => {
+  if (e.key === "Enter") finish();
+  if (e.key === "Backspace" || (e.ctrlKey && e.key === "z")) { e.preventDefault(); undo(); }
+});
+
+function renderList() {
+  const el = document.getElementById("list"); el.innerHTML = "";
+  files.forEach((f, i) => {
+    const d = document.createElement("div"), v = viewOf(f.name), s = stemOf(f.name);
+    const tag = zones[s] ? "✓ riêng: " + Object.keys(zones[s]).join(",") : zones[v] ? "✓ " + Object.keys(zones[v]).join(",") : "";
+    d.innerHTML = `${f.name}<span class="tag">${tag}</span>`;
+    if (i === cur) d.className = "on";
+    d.onclick = () => open(i); el.appendChild(d);
+  });
+}
+function open(i) {
+  cur = i; draft = [];
+  own.checked = stemOf(files[i].name) in zones;
+  const im = new Image();
+  im.onload = () => { img = im; cv.width = im.naturalWidth; cv.height = im.naturalHeight; draw(); renderList(); };
+  im.src = URL.createObjectURL(files[i]);
+}
+cv.onclick = e => {
+  if (!img) return;
+  const r = cv.getBoundingClientRect();
+  draft.push([+((e.clientX - r.left) / r.width).toFixed(4), +((e.clientY - r.top) / r.height).toFixed(4)]);
+  draw();
+};
+function finish() {
+  if (draft.length < 3) return;
+  const k = activeKey();
+  zones[k] = zones[k] || {}; (zones[k][zt()] = zones[k][zt()] || []).push(draft);
+  draft = []; renderList(); draw();
+}
+function undo() {
+  if (draft.length) { draft.pop(); return draw(); }
+  const k = cur >= 0 && activeKey(), polys = k && zones[k] && zones[k][zt()];
+  if (polys && polys.length) { polys.pop(); if (!polys.length) delete zones[k][zt()]; renderList(); draw(); }
+}
+function poly(pts, color, closed) {
+  const W = cv.width, H = cv.height, lw = Math.max(2, W / 400);
+  ctx.beginPath(); pts.forEach(([x, y], i) => i ? ctx.lineTo(x * W, y * H) : ctx.moveTo(x * W, y * H));
+  if (closed) { ctx.closePath(); ctx.fillStyle = color + "40"; ctx.fill(); }
+  ctx.lineWidth = lw; ctx.strokeStyle = color; ctx.stroke();
+  pts.forEach(([x, y]) => { ctx.beginPath(); ctx.arc(x * W, y * H, lw * 1.5, 0, 7); ctx.fillStyle = color; ctx.fill(); });
+}
+function draw() {
+  if (!img) return;
+  ctx.drawImage(img, 0, 0);
+  const k = activeKey();
+  for (const [t, polys] of Object.entries(zones[k] || {})) polys.forEach(p => poly(p, COLORS[t], true));
+  if (draft.length) poly(draft, COLORS[zt()], false);
+  document.getElementById("status").textContent = `Đang vẽ vùng của: ${k}${own.checked ? " (riêng ảnh này)" : " (cả góc)"} · ảnh ${img.naturalWidth}×${img.naturalHeight}`;
+}
+</script>
+</body>
+</html>

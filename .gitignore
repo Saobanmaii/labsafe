@@ -1,0 +1,34 @@
+# ---- bí mật: KHÔNG BAO GIỜ đưa lên ----
+.env
+.env.*
+.claude/
+
+# ---- trọng số lớn: thư viện tự tải lại khi chạy lần đầu ----
+weights/
+*.pt
+!models/*.pt
+
+# ---- dữ liệu sinh ra khi chạy (tạo lại được) ----
+app_data/
+runs/labsafe6/
+outputs/annotated/
+outputs/train/
+app/checklist.yaml
+app/checklist.labsafe6.yaml
+
+# ---- dữ liệu gốc / cá nhân ----
+data/raw_photos/
+data/labels/*.xlsx
+data/train_raw/
+data/train_labeled/
+data/videos/
+share/
+paper.zip
+
+# ---- Python / hệ thống ----
+__pycache__/
+*.pyc
+.ipynb_checkpoints/
+.vscode/
+Thumbs.db
+~$*

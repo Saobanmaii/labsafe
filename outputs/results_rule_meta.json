@@ -1,0 +1,16 @@
+{
+  "coco_model": "yolo11s.pt",
+  "ext_model": "D:\\Study\\Chuyên đề\\models\\extinguisher_best.pt",
+  "world_model": "yolov8s-worldv2.pt",
+  "conf": 0.3,
+  "params": {
+    "footprint_frac": 0.25,
+    "tau_aisle": 0.05,
+    "min_personal": 3,
+    "tau_visible": 0.5,
+    "tau_occlusion": 0.3333333333333333,
+    "min_food": 1
+  },
+  "device": "NVIDIA GeForce MX350",
+  "mean_time_ms": 342.22419354838706
+}

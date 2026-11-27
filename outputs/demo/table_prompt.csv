@@ -1,0 +1,5 @@
+﻿Model,Tiêu chí,Số prompt,Ảnh 3 prompt đồng nhất,Fleiss κ giữa prompt,Độ khớp min–max,Biên độ
+demo-vlm,C1,3,0.44,0.25,0.69–0.89,0.19
+demo-vlm,C2,3,0.58,0.42,0.81–0.89,0.08
+demo-vlm,C3,3,0.25,-0.00,0.61–0.83,0.22
+demo-vlm,C4,3,0.78,0.70,0.86–0.97,0.11
